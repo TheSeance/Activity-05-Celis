@@ -20,9 +20,9 @@ def menu():
     if input1 == 1:
         x = int(input("Enter row: "))
         y = int(input("Enter column: "))
-        pxBlue = filepath[x,y,0]
-        pxGreen = filepath[x,y,1]
-        pxRed = filepath[x,y,2]
+        pxBlue = img[x,y,0]
+        pxGreen = img[x,y,1]
+        pxRed = img[x,y,2]
         print("Pixel Value")
         print("Blue: ", pxBlue)
         print("Green: ", pxGreen)
@@ -32,16 +32,16 @@ def menu():
     elif input1 == 2:
         x = int(input("Enter row: "))
         y = int(input("Enter column: "))
-        pxBlue = filepath[x,y,0]
-        pxGreen = filepath[x,y,1]
-        pxRed = filepath[x,y,2]
+        pxBlue = img[x,y,0]
+        pxGreen = img[x,y,1]
+        pxRed = img[x,y,2]
         print("Set Value for each channel")
         b = int(input(" Enter value for blue: "))
         g = int(input(" Enter value for green: "))
         r = int(input(" Enter value for red: "))
-        pxBlue1 = filepath.itemset((x,y,0),b)
-        pxGreen1 = filepath.itemset((x,y,1),g)
-        pxRed1 = filepath.itemset((x,y,2),r)
+        pxBlue1 = img.itemset((x,y,0),b)
+        pxGreen1 = img.itemset((x,y,1),g)
+        pxRed1 = img.itemset((x,y,2),r)
         print("Value Before \nBlue: ", pxBlue, "\nGreen: ", pxGreen, "\nRed: ", pxRed)
         print("Value Now \nBlue: ", pxBlue1, "\nGreen: ", pxGreen1, "\nRed: ", pxRed1)
         
@@ -52,7 +52,7 @@ def menu():
         xend = int(input("Enter ending row:"))
         ystart = int(input("Enter starting column:"))
         yend = int(input("Enter ending column:"))
-        a,b,c = filepath.shape
+        a,b,c = img.shape
         if xstart <= a:
             
             if xend <= a:
@@ -76,22 +76,22 @@ def menu():
 
     elif input1 == 4:
         pxcount = int(input("Set desired pixel count: "))
-        if filepath.size < pxcount:
-            print("Original Pixel count:", filepath.size)
+        if img.size < pxcount:
+            print("Original Pixel count:", img.size)
             print("Set Pixel count: ", pxcount)
             print("Original Pixel count is less than Set Pixel count")
-        elif filepath.size < pxcount:
-            print("Original Pixel count:", filepath.size)
+        elif img.size < pxcount:
+            print("Original Pixel count:", img.size)
             print("Set Pixel count: ", pxcount)
             print("Original Pixel count is more than Set Pixel count")
         else:
-            print("Original Pixel count:", filepath.size)
+            print("Original Pixel count:", img.size)
             print("Set Pixel count: ", pxcount)
             print("Original Pixel count is equal to Set Pixel count")
 
 
     elif input1 == 5:
-        print(filepath.dtype)
+        print(img.dtype)
 
 
     else:
